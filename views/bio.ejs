@@ -1,0 +1,131 @@
+<DOCTYPE! html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bio Rack</title>
+        <!-- CSS files -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles3.css">
+        <link rel="stylesheet" href="css/materialize.css">
+        <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet">
+        <!-- JS Files -->
+        <script src="js/materialize.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Nav Bar -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="col s12 m12 l12 nav-wrapper">
+                    <span style="margin-left:35px;" class="logo">
+                        <img src="img/logo.jpg" height="60" width="60">
+                    </span>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:25px;">
+                        <li class="nav-list">
+                            <input name="search" placeholder="Search for books">
+                        </li>
+                        <li class="nav-list">
+                            <a href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="/about">About</a>
+                        </li>
+                    </ul>
+                    <span class="right hide-on-large-only sb">Menu</span>
+                    <div>
+                        <ul class="col s12 hidden small-menu right">
+                            <li>
+                                <a href="/logout">Log Out</a>
+                            </li>
+                            <li>
+                                <a href="/about">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid-bio">
+            <h1 class="main-header">Biology</h1>
+            <h2 class="sub-header">Section</h2>
+            <!-- <h2 class="sub-header">Rack</h2> -->
+        </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <span>-</span>
+                    <h3 class="center" id="cat-header">Books</h3>
+                    <span>-</span>
+                </div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Author(s)</th>
+                        <th>Title</th>
+                        <th>Publisher</th>
+                        <th>Year</th>
+                        <th>Edition</th>
+                        <th>Pages</th>
+                        <th>Size</th>
+                        <th>Price</th>
+                    </tr>
+                    <% for(var i= 0;i<books.length;i++){ %>
+                        <tr>
+                            <td>
+                                <%= books[i].author %>
+                            </td>
+                            <td>
+                                <%= books[i].title %>
+                            </td>
+                            <td>
+                                <%= books[i].publisher %>
+                            </td>
+                            <td>
+                                <%= books[i].year %>
+                            </td>
+                            <td>
+                                <%= books[i].edition %>
+                            </td>
+                            <td>
+                                <%= books[i].pages %>
+                            </td>
+                            <td>
+                                <%= books[i].size %>
+                            </td>
+                            <td>
+                                <%= books[i].price %>
+                            </td>
+                            <td>
+                                <button onclick='show(this.value)' value="<%= books[i].title %>">Pay</button>
+                            </td>
+                        </tr>
+                        <% } %>
+                </table>
+            </div>
+
+        </section>
+
+        <div align="center">
+            <button class="btn">
+                <a href="/pay" style="text-decoration:none;color:white">Proceed</a>
+            </button>
+        </div>
+
+        <script>
+            function show(title) {
+                console.log(typeof title);
+                document.cookie = "bookName=" + title + "; expires=Thu, 18 Dec 2017 12:00:00 UTC";
+                console.log("Cookie saved");
+                console.log(document.cookie.bookName);
+            }
+        </script>
+    </body>
+
+    </html>

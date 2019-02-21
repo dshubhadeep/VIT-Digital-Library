@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VDL Login</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <!-- JS Files -->
+    <script src="js/mainTwo.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/formCtrl.js"></script>
+</head>
+
+<body ng-app="formCtr" ng-controller="formController">
+    <div class="login imgcontainerOne">
+        <img src="img/img_avatar2.png" class="avatar">
+        <br/>
+        <h1 id="logHeader" align="center">Log In</h1>
+        <form method="post" action="/login" class="formOne">
+            <input required name="username" type="text" id="memUser" class="login" placeholder="Username" ng-model="memUser">
+            <br>
+            <input required name="password" type="password" id="memPass" class="login" placeholder="Password" ng-model="memPass">
+            <br>
+            <span id="passError"></span>
+            <br>
+            <span id="passError1"></span>
+            <br>
+            <input class="button" type="submit" value="Log In" class="logButton">
+        </form>
+    </div>
+    <div class="options">
+        <h4 align="center">
+            <a href="/register" class="newUser">Create account</a>
+        </h4>
+        <h4 align="center" id="forgotPass">
+            <a href="#" ng-click="reset()">Forgot Password ?</a>
+        </h4>
+    </div>
+    </div>
+</body>
+
+</html>

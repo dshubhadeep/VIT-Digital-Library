@@ -1,0 +1,31 @@
+{
+  "name": "authen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "mongoose": "^4.4.6",
+    "nodemon": "^1.12.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dshubhadeep/VIT-Digital-Library"
+  },
+  "author": "Shubhadeep Das",
+  "license": "ISC"
+}
