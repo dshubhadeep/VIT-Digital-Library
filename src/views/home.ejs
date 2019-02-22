@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#363636" />
+    <title>Book Rack | Home</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bulma_lux.css" />
+
+    <!-- JS Links -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"
+    ></script>
+
+    <style>
+      .navbar {
+        height: 4rem !important;
+        min-height: 4rem !important;
+        max-height: 4rem !important;
+      }
+
+      .navbar div {
+        height: 4rem !important;
+        min-height: 4rem !important;
+        max-height: 4rem !important;
+      }
+
+      .form-wrapper {
+        padding: 1.5rem 0.5rem !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR start -->
+    <%- include ./partials/navbar %>
+    <!-- NAVBAR end -->
+
+    <div class="section" style="padding:1rem 1rem !important;">
+      <h1 class="title">HOME</h1>
+    </div>
+    <script>
+      const openTab = (a, b) => {
+        let c, d, e;
+        for (
+          d = document.getElementsByClassName("tab-content"), c = 0;
+          c < d.length;
+          c++
+        )
+          d[c].style.display = "none";
+        for (
+          e = document.getElementsByClassName("tab"), c = 0;
+          c < d.length;
+          c++
+        )
+          e[c].className = e[c].className.replace(" is-active", "");
+        (document.getElementById(b).style.display = "block"),
+          (a.currentTarget.className += " is-active");
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        const a = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
+        0 < a.length &&
+          a.forEach(b => {
+            b.addEventListener("click", () => {
+              const c = b.dataset.target,
+                d = document.getElementById(c);
+              b.classList.toggle("is-active"), d.classList.toggle("is-active");
+            });
+          });
+      });
+    </script>
+  </body>
+</html>

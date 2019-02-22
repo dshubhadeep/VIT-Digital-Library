@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#363636" />
+    <title>Book Rack | Login</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bulma_lux.css" />
+
+    <!-- JS Links -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"
+    ></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column">
+          <h1 align="center" class="title">Login</h1>
+          <hr />
+          <br />
+          <!-- FORM start -->
+          <form action="/login" method="POST">
+            <!-- EMAIL FIELD start -->
+            <div class="field">
+              <label for="email" class="label">Email</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="john@gmail.com"
+                  name="email"
+                  required
+                  autofocus
+                />
+                <span class="icon is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <!-- EMAIL FIELD end -->
+
+            <!-- PASSWORD FIELD start -->
+            <div class="field">
+              <label for="email" class="label">Password</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  name="password"
+                  required
+                  autofocus
+                />
+                <span class="icon is-left"> <i class="fas fa-lock"></i> </span>
+              </div>
+            </div>
+            <!-- PASSWORD FIELD end -->
+            <div
+              class="field"
+              style="margin:6% auto;display: flex;justify-content: center;"
+            >
+              <p class="control">
+                <input
+                  type="submit"
+                  class="button is-primary is-outlined"
+                  value="Login"
+                />
+              </p>
+            </div>
+            <h3
+              class="subtitle is-6 has-text-centered"
+              style="margin-top: 30px;"
+            >
+              <strong>New User ? <a href="/register">Register here</a></strong>
+            </h3>
+          </form>
+          <!-- FORM end -->
+        </div>
+        <div class="column"></div>
+      </div>
+    </section>
+  </body>
+</html>
